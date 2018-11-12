@@ -1,0 +1,69 @@
+1. Procedimiento Asignación 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `1. Procedimiento Asignación`()
+SELECT base_principal.No_Contrato, base_principal.Identificacion, base_principal.Nombre_Usuario, base_principal.Cargo, contrato.Tiempo_Asignación, base_principal.Fecha_Inicio FROM base_principal JOIN contrato ON base_principal.Identificacion = contrato.con_iden$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+2. Procedimiento Días Pago
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `2. Procedimiento Días Pago`()
+SELECT No_Contrato, Identificacion, Nombre_Usuario, Cargo, Días_Pago, Salario FROM base_principal$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+3. Prodecimiento Datos Bancarios 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `3. Prodecimiento Datos Bancarios`()
+SELECT base_principal.Identificacion, base_principal.Nombre_Usuario, base_principal.Lugar_Residencia, nomina.Banco, nomina.Tipo_Cuenta, nomina.No_Cuenta FROM base_principal JOIN nomina ON base_principal.Identificacion = nomina.no_iden$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+4. Prodecimiento Estado 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `4. Prodecimiento Estado`()
+SELECT Identificacion, Nombre_Usuario, Estado_Actual FROM base_principal$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+5. Procedimiento Fechas 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `5. Procedimiento Fechas`()
+SELECT base_principal.Identificacion, base_principal.Nombre_Usuario, base_principal.Fecha_Inicio, contrato.Tiempo_Asignación, base_principal.Fecha_Fin FROM base_principal JOIN contrato ON base_principal.Identificacion = contrato.con_iden$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+6. Procedimiento EPS-ARL
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `6. Procedimiento EPS-ARL`()
+SELECT Identificacion, Nombre_Usuario, EPS, ARL FROM base_principal$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+7. Procedimiento Pensión
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `7. Procedimiento Pensión`()
+SELECT Identificacion, Nombre_Usuario, Pensión FROM base_principal$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+8. Procedimiento Cumpleaños 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `8. Procedimiento Cumpleaños`()
+SELECT Identificacion, Nombre_Usuario, correo, Fecha_Nacimiento FROM base_principal$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+9. Procedimiento Hijos
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `9. Procedimiento Hijos`()
+SELECT Identificacion, Nombre_Usuario, Hijos FROM base_principal$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+10. Procedimiento Caso Emergencia
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `10. Procedimiento Caso Emergencia`()
+SELECT Identificacion, Nombre_Usuario, En_Caso_Emergencia, Teléfono_Contacto FROM base_principal$$
+DELIMITER ;

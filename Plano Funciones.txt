@@ -1,0 +1,54 @@
+1. Función Estado Civil 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `1. Función Estado Civil`() RETURNS varchar(30) CHARSET utf8
+BEGIN
+DECLARE ecivil varchar(30) DEFAULT 'DESCONOCIDO';
+SELECT Estado_Civil INTO ecivil FROM base_principal;
+RETURN ecivil;
+END$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+2. Función Contrato 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `2. Función Contrato`() RETURNS varchar(30) CHARSET utf8
+BEGIN
+DECLARE cont varchar(30) DEFAULT 'DESCONOCIDO';
+SELECT id_Contrato INTO cont FROM contrato;
+RETURN cont;
+END$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+3. Función Tipo Contrato
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `3. Función Tipo Contrato`() RETURNS varchar(30) CHARSET utf8
+BEGIN
+DECLARE tcont varchar(30) DEFAULT 'DESCONOCIDO';
+SELECT Tipo_Contrato INTO tcont FROM contrato;
+RETURN tcont;
+END$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+4. Función Banco
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `4. Función Banco`() RETURNS varchar(30) CHARSET utf8
+BEGIN
+DECLARE banco varchar(30) DEFAULT 'DESCONOCIDO';
+SELECT Banco INTO banco FROM nomina;
+RETURN banco;
+END$$
+DELIMITER ;
+-----------------------------------------------------------------------------
+5. Función Cargo 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `5. Función Cargo`() RETURNS varchar(30) CHARSET utf8
+BEGIN
+DECLARE fcargo varchar(30) DEFAULT 'DESCONOCIDO';
+SELECT Cargo INTO fcargo FROM base_principal;
+RETURN fun1;
+END$$
+DELIMITER ;

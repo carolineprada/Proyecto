@@ -1,0 +1,20 @@
+INSERT INTO base_principal (Identificacion, Nombre_Usuario, Pais, Lugar_Residencia, Dirección, Teléfono, correo, Fecha_Nacimiento, RH, Estado_Civil, Hijos, En_Caso_Emergencia, Teléfono_Contacto, EPS, Pensión, Cesantías, ARL, Caja_Compensación, No_Contrato, Cargo, Salario, Días_Pago, Fecha_Inicio, Fecha_Fin, Estado_Actual)
+VALUES
+
+(1056789112, "Mariela Pineda", "Brasil", "Rio de Janeiro", "Calle 356-30", "904748397", "mpineda@gmail.com", "1971-04-05", "AB+", "Casada", 0, "Amaury Dos Santos", "905678649", "Sura", "No Aplica","No Aplica", "Sura","No Aplica", "  ", "Consultor HCM Senior", 18000000, 10, "2018-07-03"," ", "Activo")
+
+
+UPDATE base_general SET No_Contrato = QS2018-001 
+WHERE base_general.Identificacion = 1056789112;
+
+----------------------------------------------------
+
+INSERT INTO contrato (id_Contrato, con_iden, Tipo_Contrato, Tiempo_Asignación)
+VALUES
+("QS2018-001", 1056789112, "Prestación Servicios", "30 Días")
+
+----------------------------------------------------
+
+INSERT INTO nomina (no_iden, Días_Pago, Banco, Tipo_Cuenta, No_Cuenta)
+VALUES
+(1056789112, "10", "Banco de Bogotá", "Ahorros", "010-8692618051")

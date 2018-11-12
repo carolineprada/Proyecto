@@ -1,0 +1,59 @@
+CREATE TABLE base_principal
+(
+  id_BaseGeneral int AUTO_INCREMENT UNIQUE,
+  Identificacion int (15) PRIMARY KEY,
+  Nombre_Usuario varchar (40),
+  Pais varchar (20),
+  Lugar_Residencia varchar (20),
+  Dirección varchar (50),
+  Teléfono varchar (25),
+  correo varchar(50),
+  Fecha_Nacimiento date,
+  RH varchar (5),
+  Estado_Civil varchar (20),
+  Hijos int (3),
+  En_Caso_Emergencia varchar (40),
+  Teléfono_Contacto varchar (25),
+  EPS varchar (20),
+  Pensión varchar (20),
+  Cesantías varchar (20),
+  ARL varchar (20),
+  Caja_Compensación varchar (20),
+  No_Contrato varchar (11),
+  Cargo varchar (30),
+  Salario int (20),
+  Días_Pago int (5),
+  Fecha_Inicio date,
+  Fecha_Fin date,
+  Estado_Actual varchar (20)
+)
+
+----------------------------------------------------------
+
+CREATE TABLE contrato
+(
+  id_Contrato varchar (11) PRIMARY KEY,
+  con_iden int (15), (FORANEA)
+  Tipo_Contrato varchar (20),
+  Tiempo_Asignación varchar (20)
+)
+
+ADD CONSTRAINT fk_ident
+  FOREIGN KEY (con_iden)
+  REFERENCES base_principal (Identificacion)
+
+----------------------------------------------------------
+
+CREATE TABLE nomina
+(
+id_Nomina int AUTO_INCREMENT PRIMARY KEY,
+no_iden int (15), (FORANEA)
+Días_Pago int (5),
+Banco varchar (30),
+Tipo_Cuenta varchar (10),
+No_Cuenta varchar (30)
+)
+
+ADD CONSTRAINT fk_nid
+  FOREIGN KEY (no_iden)
+  REFERENCES base_principal (Identificacion)

@@ -1,0 +1,57 @@
+1. Ingreso Nuevo
+
+CREATE TRIGGER `1. Ingreso Nuevo` AFTER INSERT ON `base_principal`
+ FOR EACH ROW INSERT INTO base_principal (Concepto, Tabla)
+VALUES
+	("Ingreso Nuevo", "Base Principal")
+-----------------------------------------------------------------------------
+2. Actualización Datos 
+
+CREATE TRIGGER `2. Actualización Datos` AFTER UPDATE ON `base_principal`
+ FOR EACH ROW INSERT INTO novedades (Concepto, Tabla)
+VALUES
+	("Actualización Datos", "Base General")
+-----------------------------------------------------------------------------
+2.1. Actualización Nómina 
+
+CREATE TRIGGER `2.1. Actualización Nómina` AFTER UPDATE ON `nomina`
+ FOR EACH ROW INSERT INTO novedades (Concepto, Tabla)
+VALUES
+	("Actualización Nómina", "Nómina")
+-----------------------------------------------------------------------------
+2.2. Actualización Contrato
+
+CREATE TRIGGER `2.2. Actualización Contrato` AFTER UPDATE ON `contrato`
+ FOR EACH ROW INSERT INTO novedades (Concepto, Tabla)
+VALUES
+	("Actualización Contrato", "Contrato")
+-----------------------------------------------------------------------------
+3. Eliminación Datos 
+
+CREATE TRIGGER `3. Eliminación Datos` AFTER DELETE ON `base_principal`
+ FOR EACH ROW INSERT INTO novedades (Concepto, Tabla)
+VALUES
+	("Eliminación Datos", "Base General")
+-----------------------------------------------------------------------------
+3.1. Eliminación Datos Nómina 
+
+CREATE TRIGGER `3.1. Eliminación Datos Nómina` AFTER DELETE ON `nomina`
+ FOR EACH ROW INSERT INTO novedades (Concepto, Tabla)
+VALUES
+	("Eliminación Nómina", "Nómina")
+-----------------------------------------------------------------------------
+3.2. Eliminación Datos Contrato
+
+CREATE TRIGGER `3.2. Eliminación Datos Contrato` AFTER DELETE ON `contrato`
+ FOR EACH ROW INSERT INTO novedades (Concepto, Tabla)
+VALUES
+	("Eliminación Contrato", "Contrato")
+
+-----------------------------------------------------------------------------
+
+CREATE TABLE novedades 
+(
+  id_nov int AUTO_INCREMENT PRIMARY KEY,
+  Concepto varchar(30),
+  Tabla varchar (30)
+)
